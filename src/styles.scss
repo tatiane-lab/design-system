@@ -1,1 +1,100 @@
-/* You can add global styles to this file, and also import other style files */
+@use '../projects/ui-components/src/lib/styles/tokens';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: 5rem;
+}
+
+body {
+  margin: 0;
+  background: var(--ui-surface-page);
+  color: var(--ui-text);
+  font-family: var(--ui-font-sans);
+  font-size: var(--ui-font-size-md);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: var(--ui-color-primary);
+}
+
+:focus-visible {
+  outline: 3px solid var(--ui-focus-ring);
+  outline-offset: 2px;
+}
+
+code {
+  font-family: var(--ui-font-mono);
+  font-size: 0.875em;
+  background: var(--ui-surface-muted);
+  padding: 0.1em 0.4em;
+  border-radius: var(--ui-radius-sm);
+}
+
+// Layout helpers used by the showcase pages
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ui-space-4);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ui-space-3);
+}
+
+.lead {
+  color: var(--ui-text-muted);
+  font-size: var(--ui-font-size-lg);
+  max-width: 60ch;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+// Native select used in playground controls
+.control {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ui-space-1);
+  font-size: var(--ui-font-size-sm);
+  font-weight: 600;
+
+  select {
+    font: inherit;
+    font-weight: 400;
+    min-height: 2.25rem;
+    padding: 0 var(--ui-space-2);
+    border-radius: var(--ui-radius-md);
+    border: 1px solid var(--ui-border-strong);
+    background: var(--ui-surface);
+    color: var(--ui-text);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+  }
+}
